@@ -47,6 +47,17 @@ export const GetAllReceiverRecords = async () => {
     return listRes;
 }
 
+export const GetAllDonationRecords = async () => {
+    const res = await getDocs(collection(db, "donation_record"));
+    const listRes = []
+    res.forEach(x => {
+        const extracted = x.data();
+        extracted.id = x.id
+        listRes.push(extracted)
+    })
+    return listRes;
+}
+
 export const AddFields = async() => {
     const data = {
         date_added: '04/16/2022',

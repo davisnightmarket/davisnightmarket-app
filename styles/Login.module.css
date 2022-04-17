@@ -1,0 +1,122 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.main {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(116, 177, 119, 0.2);
+}
+
+.optionRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45%;
+    width: 70%;
+}
+
+.donorOption, .receiveOption {
+    height: 98%;
+    width: 48%;
+    border-radius: 2rem;
+    background-color: rgba(256, 256, 256, 0.58);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: linear 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.donorOption:hover, .receiveOption:hover {
+    height: 100%;
+    width: 50%;
+}
+
+.donorOption p, .receiveOption p {
+    font-size: 2rem;
+}
+
+.donorOption:hover {
+    color: rgb(180, 0, 0);
+}
+
+.receiveOption:hover {
+    color: rgb(201, 201, 0);
+}
+
+.loginBox {
+    height: 40%;
+    width: 40%;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.loginBox input {
+    height: 15%;
+    width: 50%;
+    border: 1px #c4c4c4 solid;
+    border-radius: 10px;
+    padding-left: 1rem;
+}
+
+.goBackBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 40%;
+    background-color: #fff;
+    border: 2px #000 solid;
+    margin: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.goBackBox p {
+    margin: 0;
+}
+
+.credentialBox {
+    height: 55%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clickToLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 40%;
+    background-color: rgba(116, 177, 119, 0.8);
+    margin: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.clickToLogin p {
+    margin: 0;
+}
+
+.clickToLogin:hover {
+    height: 11%;
+    width: 41%;
+    transition: linear 0.2s;
+}

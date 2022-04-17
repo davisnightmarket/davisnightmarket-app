@@ -26,6 +26,16 @@ export const GetAllFood = async () => {
     return res;
 };
 
+export const GetAllDonorCredentials = async () => {
+    const res = await getDocs(collection(db, "donor"));
+    return res;
+}
+
+export const GetAllReceiverCredentials = async () => {
+    const res = await getDocs(collection(db, "receiver"));
+    return res;
+}
+
 export const AddFields = async() => {
     const data = {
         date_added: '04/16/2022',
@@ -39,5 +49,26 @@ export const AddFields = async() => {
     }
     for (let i = 0; i < 20; i++) {
         await setDoc(doc(db, "food", uuidv4().toString()), data);
+    }
+}
+
+export const AddField = async(data) => {
+    const res = await setDoc(doc(db, "food", uuidv4().toString()), data);
+    return res;
+}
+
+export const AddDonorFields = async() => {
+    const data = {
+        access_code: '',
+        addressLine1: '',
+        addressLine2: '',
+        city: '',
+        donation_hours: '',
+        name: '',
+        postal: '',
+        state: ''
+    }
+    for (let i = 0; i < 5; i++) {
+        await setDoc(doc(db, "donor", uuidv4().toString()), data);
     }
 }

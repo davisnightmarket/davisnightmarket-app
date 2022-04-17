@@ -30,20 +30,20 @@ export default function Navbar(props) {
     </React.Fragment>
 
     const donorNavbar = <React.Fragment>
-                <Link href='/main'>
+                <Link href={`/donor?id=${props.id}`}>
                     <div className={ styles.menuOption } style={ btn1 ? { backgroundColor: '#E7EDE9' } : null }>
                         <AiFillHome color={btn1 ? '#000' : '#fff'} size={30} style={{ margin: '0 1.5rem' }} />
                         <p style={ btn1 ? { color: '#000' } : { color: '#fff' } }>Home</p>
                     </div>
                 </Link>
-                <Link href='/explore'>
+                <Link href={`/donor/documents?id=${props.id}`}>
                     <div className={ styles.menuOption } style={ btn2 ? { backgroundColor: '#E7EDE9' } : null }>
                         <IoDocumentsOutline color={btn2 ? '#000' : '#fff'} size={30} style={{ margin: '0 1.5rem' }} />
-                        <p style={ btn2 ? { color: '#000' } : { color: '#fff' } }>Confirmation Receipts</p>
+                        <p style={ btn2 ? { color: '#000' } : { color: '#fff' } }>Documents</p>
                     </div>
                 </Link>
                 <div className={ styles.line }></div>
-                <Link href='/login'>
+                <Link href='/main'>
                     <div className={ styles.menuOption } style={ btn3 ? { backgroundColor: '#E7EDE9' } : null }>
                         <AiOutlineLogout color={btn3 ? '#000' : '#fff'} size={30} style={{ margin: '0 1.5rem' }} />
                         <p style={ btn3 ? { color: '#000' } : { color: '#fff' } }>Log Out</p>
@@ -52,20 +52,20 @@ export default function Navbar(props) {
     </React.Fragment>
 
     const receiverNavbar = <React.Fragment>
-                <Link href='/main'>
+                <Link href={`/receiver?id=${props.id}`}>
                     <div className={ styles.menuOption } style={ btn1 ? { backgroundColor: '#E7EDE9' } : null }>
                         <AiFillHome color={btn1 ? '#000' : '#fff'} size={30} style={{ margin: '0 1.5rem' }} />
                         <p style={ btn1 ? { color: '#000' } : { color: '#fff' } }>Home</p>
                     </div>
                 </Link>
-                <Link href='/explore'>
+                <Link href={`/receiver/receipt?id=${props.id}`}>
                     <div className={ styles.menuOption } style={ btn2 ? { backgroundColor: '#E7EDE9' } : null }>
                         <IoDocumentsOutline color={btn2 ? '#000' : '#fff'} size={30} style={{ margin: '0 1.5rem' }} />
-                        <p style={ btn2 ? { color: '#000' } : { color: '#fff' } }>Tax Documents</p>
+                        <p style={ btn2 ? { color: '#000' } : { color: '#fff' } }>Confirmation Receipts</p>
                     </div>
                 </Link>
                 <div className={ styles.line }></div>
-                <Link href='/login'>
+                <Link href='/main'>
                     <div className={ styles.menuOption } style={ btn3 ? { backgroundColor: '#E7EDE9' } : null }>
                         <AiOutlineLogout color={btn3 ? '#000' : '#fff'} size={30} style={{ margin: '0 1.5rem' }} />
                         <p style={ btn3 ? { color: '#000' } : { color: '#fff' } }>Log Out</p>
@@ -75,10 +75,12 @@ export default function Navbar(props) {
 
     return (
         <div className={ styles.navbar }>
-            <div className={ styles.logoSection }>
-                <img src='/images/logo.png' />
-                <h4>Every Food Deserves A Second Chance</h4>
-            </div>
+            <Link href={'/'}>
+                <div className={ styles.logoSection }>
+                    <img src='/images/logo.png' />
+                    <h4>ALL FOOD DESERVES A SECOND CHANCE</h4> 
+                </div>
+            </Link>
             <div className={styles.menu}>
                 { (!props.donor && !props.receiver) ? homeNavbar : null }
                 { props.donor ? donorNavbar : null }

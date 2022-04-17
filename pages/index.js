@@ -7,7 +7,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Food Redemption</title>
-        <meta name="description" content="Food Redemption: Every Food Needs A Second Chance" />
+        <meta name="description" content="Food Redemption: All Food Deserves A Second Chance" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
       <div className={ styles.main }>
         <h1>Food Redemption</h1>
-        <h4>Every Food Deserves A Second Chance</h4>
+        <h4>All Food Deserves A Second Chance</h4>
         <img src="/images/logo.png" alt='Main Logo' /> 
         <Link href='/main'>
           <div className={ styles.btn }>

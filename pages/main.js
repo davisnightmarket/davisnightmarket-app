@@ -1,16 +1,17 @@
 import Head from 'next/head'
 import Navbar from '../components/shared/navbar/navbar';
-import { AddFields } from '../firebase_ops/query';
+import { AddDonorFields, AddFields } from '../firebase_ops/query';
 import styles from '../styles/Main.module.css'
 
 export default function Main() {
 
 // AddFields()
+// AddDonorFields()
   return (
     <div className={styles.container}>
       <Head>
         <title>Food Redemption</title>
-        <meta name="description" content="Food Redemption: Every Food Needs A Second Chance" />
+        <meta name="description" content="Food Redemption: All Food Deserves A Second Chance" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,7 +32,7 @@ export default function Main() {
             <div className={ styles.boxContainer }>
               <div className={ styles.textBox }>
                 <p>
-                  According to Business Insider restaurants throw out 85% of unused food every year. Waste like this affects our environment, causing climate change and air pollution. On the other hand, 1 out of 8 American's experiences food insecurity every year. Regardless of the excess food, people still go hungry while waste and garbage piles up. We at Food Redemption hope to bridge this gap by taking on the challenge of combating food insecurity and wastage. How do we plan to do this? By allowing restaurants to donate their excess food! Giving people access to food, and allowing restaurants to lower their overall waste.  
+                  According to Business Insider restaurants throw out 85% of unused food every year. Waste like this affects our environment, causing climate change and air pollution. On the other hand, 1 out of 8 Americans experience food insecurity every year. Regardless of the excess food, people still go hungry while waste and garbage piles up. We at Food Redemption hope to bridge this gap by taking on the challenge of combating food insecurity and wastage. How do we plan to do this? By allowing restaurants to donate their excess food! Giving people access to food, and allowing restaurants to lower their overall waste.  
                 </p>
               </div>
             </div>

@@ -28,7 +28,7 @@ export default function Explore() {
       <div className={styles.container}>
         <Head>
           <title>Food Redemption - Explore</title>
-          <meta name="description" content="Food Redemption: Every Food Needs A Second Chance" />
+          <meta name="description" content="Food Redemption: All Food Deserves A Second Chance" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Navbar status={[ false, true, false ]} />

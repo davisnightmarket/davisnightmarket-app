@@ -46,14 +46,22 @@
 
 .donorOption p, .receiveOption p {
     font-size: 2rem;
+    transition: 0.2s linear;
 }
 
-.donorOption:hover {
-    color: rgb(180, 0, 0);
+.donorOption:hover p, .receiveOption:hover p {
+    font-size: 2.2rem;
 }
 
-.receiveOption:hover {
-    color: rgb(201, 201, 0);
+.donorOption img, .receiveOption img {
+    height: 120px;
+    width: auto;
+    transition: 0.2s linear;
+}
+
+.donorOption:hover img, .receiveOption:hover img {
+    height: 140px;
+    width: auto;
 }
 
 .loginBox {
@@ -119,4 +127,8 @@
     height: 11%;
     width: 41%;
     transition: linear 0.2s;
+}
+
+.error {
+    color: red;
 }

@@ -32,7 +32,7 @@ export default function Main() {
             <div className={ styles.boxContainer }>
               <div className={ styles.textBox }>
                 <p>
-                  According to Business Insider restaurants throw out 85% of unused food every year. Waste like this affects our environment, causing climate change and air pollution. On the other hand, 1 out of 8 Americans experience food insecurity every year. Regardless of the excess food, people still go hungry while waste and garbage piles up. We at Food Redemption hope to bridge this gap by taking on the challenge of combating food insecurity and wastage. How do we plan to do this? By allowing restaurants to donate their excess food! Giving people access to food, and allowing restaurants to lower their overall waste.  
+                Every year one out of eight Americans experience food insecurity. This problem persists for college students, with 38% of students struggling to put food on the table. Looking at these statistics, it may seem as though there is a food shortage, but it’s actually just the opposite: America has a large food waste problem. Actually, restaurants end up disposing of 85% of their unused food. That’s 22 to 33 billion pounds of food waste each year. Regardless of the excess food, people still go hungry while waste and garbage piles up. We at Food Redemption hope to bridge this gap by taking on the challenge of combating food insecurity and wastage. How do we plan to do this? By allowing restaurants to donate their excess food! Giving people access to food, and allowing restaurants to lower their overall waste.
                 </p>
               </div>
             </div>

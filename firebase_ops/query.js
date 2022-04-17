@@ -36,6 +36,17 @@ export const GetAllReceiverCredentials = async () => {
     return res;
 }
 
+export const GetAllReceiverRecords = async () => {
+    const res = await getDocs(collection(db, "claimed_record"));
+    const listRes = []
+    res.forEach(x => {
+        const extracted = x.data();
+        extracted.id = x.id
+        listRes.push(extracted)
+    })
+    return listRes;
+}
+
 export const AddFields = async() => {
     const data = {
         date_added: '04/16/2022',
@@ -54,6 +65,11 @@ export const AddFields = async() => {
 
 export const AddField = async(data) => {
     const res = await setDoc(doc(db, "food", uuidv4().toString()), data);
+    return res;
+}
+
+export const AddReceiptRecord = async(data) => {
+    const res = await setDoc(doc(db, "claimed_record", uuidv4().toString()), data);
     return res;
 }
 

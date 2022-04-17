@@ -33,7 +33,7 @@ export default function Explore() {
         </Head>
         <Navbar status={[ false, true, false ]} />
         <div className={ styles.main }>
-            <h1>Availability for April 16th, 2022</h1>
+            <h1>Availability for April {(new Date()).getDate()}th, 2022</h1>
             <div className={ styles.scrollable }>
               <div className={ styles.mainContainer }>
                 {

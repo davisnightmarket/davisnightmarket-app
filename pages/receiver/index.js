@@ -41,7 +41,7 @@ export default function Receiver(props) {
                 <h4>Start exploring food options!</h4>
                 <div className={ styles.scrollable }>
                     {
-                        foodData ? foodData.map(x => <DisplayFood claimable data={x} />) : null
+                        foodData ? foodData.map(x => <DisplayFood claimable data={x} key={x.id} />) : null
                     }
                 </div>
             </div>

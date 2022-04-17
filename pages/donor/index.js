@@ -116,7 +116,7 @@ export default function Donor(props) {
             </div>
             <h1>Donation(s) Today</h1>
             <div className={ styles.donatedFood }>
-                { props.donorDonatedFood.map(x => <DisplayFood data={x} />) }
+                { props.donorDonatedFood.map(x => <DisplayFood data={x} key={x.id} />) }
             </div>
           </div>
         </div>

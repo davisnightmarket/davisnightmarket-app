@@ -37,11 +37,11 @@ export default function Explore() {
     const defaultPage = <div className={ styles.optionRow }>
           <div className={ styles.donorOption } onClick={() => setPageState(1)}>
               <img src='/images/donor.png' />
-              <p>I'm a Donor</p>
+              <p>I&apos;m a Donor</p>
           </div>
           <div className={ styles.receiveOption } onClick={() => setPageState(2)}>
               <img src='./images/receiver.png' />
-              <p>I'm a Receiver</p>
+              <p>I&apos;m a Receiver</p>
           </div>
       </div>
 

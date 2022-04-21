@@ -67,7 +67,7 @@ export default function Donor(props) {
           <div className={ styles.main }>
             <h1>Hello, { props.loggedInDonor.name }!</h1>
             <h4>Thank you for contributing to this amazing cause!</h4>
-            <p>What would you like to donate today?</p>
+            <p className={ styles.titleCaption } >What would you like to donate today?</p>
             <div className={ styles.donate }>
                 <div className={ styles.donateBox }>
                     <div className={ styles.imageSection }>

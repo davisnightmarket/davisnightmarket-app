@@ -16,7 +16,7 @@ export default function DisplayFood(props) {
                 </div>
                 <div className={ styles.foodDesp }>
                     <h4>{ props.data.name }</h4>
-                    <div className={ styles.foodMap } style={{ marginLeft: '2rem' }}>
+                    <div className={ styles.foodMap }>
                         <HiOutlineLocationMarker style={{ marginRight: '1rem' }} />
                         <p>{ props.data.owner }</p>
                     </div>
@@ -42,7 +42,7 @@ export default function DisplayFood(props) {
                                 <p>Claimed on {props.claim_date}</p>
                             </div>
                             :
-                            <div>
+                            <div className={ styles.availability }>
                                 <p>{props.data.quantity_available - props.data.quantity_claimed} Available!</p>
                             </div>
                         )

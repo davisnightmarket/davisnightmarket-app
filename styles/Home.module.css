@@ -47,3 +47,23 @@
   border-radius: 1rem;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 425px) {
+  .main h1 {
+    font-size: 2rem;
+  }
+
+  .main h4 {
+    font-size: 1rem;
+  }
+
+  .main img {
+    height: auto;
+    width: 300px;
+  }
+
+  .btn {
+    height: 50px;
+    width: 110px;
+  }
+}

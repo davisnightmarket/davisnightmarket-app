@@ -132,3 +132,46 @@
 .error {
     color: red;
 }
+
+@media only screen and (max-width: 425px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .optionRow {
+        flex-direction: column;
+        height: 95%;
+        width: 95%;
+    }
+
+    .donorOption, .receiveOption {
+        height: 260px;
+        width: 260px;
+    }
+
+    .donorOption img, .receiveOption img {
+        height: 100px;
+    }
+
+    .donorOption p, .receiveOption p {
+        font-size: 30px;
+    }
+
+    .loginBox {
+        height: 300px;
+        width: 95%;
+    }
+
+    .goBackBox p {
+        font-size: 12px;
+    }
+
+    .goBackBox, .clickToLogin, .clickToLogin:hover {
+        height: 35px;
+        width: 170px;
+    }
+}

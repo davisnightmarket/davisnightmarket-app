@@ -45,3 +45,22 @@
     width: 100%;
     margin-top: 1rem;
 }
+
+@media only screen and (max-width: 425px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .scrollable {
+      width: 100vw;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .main h1 {
+        font-size: 1.2rem;
+        padding-left: 1rem;
+    }
+}

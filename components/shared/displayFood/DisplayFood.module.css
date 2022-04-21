@@ -41,6 +41,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    margin-left: 2rem;
 }
 
 .foodMap p {
@@ -124,4 +125,41 @@
 .submitClaimBtn:hover {
     height: 37%;
     width: 52%;
+}
+
+@media only screen and (max-width: 425px) {
+    .mainCover {
+        width: 95%;
+    }
+
+    .imgSection {
+        margin: 0 1.5rem;
+    }
+
+    .imgSection img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .foodDesp {
+        width: 50%;
+    }
+
+    .foodDesp h4 {
+        font-size: 15px;
+        padding: 0;
+    }
+
+    .foodMap {
+        margin: 0;
+    }
+
+    .foodMap p {
+        font-size: 12px;
+    }
+
+    .availability {
+        margin-left: 0.5rem;
+        font-size: 12px;
+    }
 }

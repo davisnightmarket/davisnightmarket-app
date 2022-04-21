@@ -17,7 +17,7 @@
     background-color: rgba(116, 177, 119, 0.2);
 }
 
-.main h4, .main h1, .main p {
+.main h4, .main h1, .titleCaption {
     margin: 0;
 }
 
@@ -29,7 +29,7 @@
     margin: 0 0 1rem 2rem;
 }
 
-.main p {
+.titleCaption {
     margin: 0 0 2rem 2rem;
 }
 
@@ -196,4 +196,48 @@
 .donationBtn:hover {
     height: 67%;
     width: 24%;
+}
+
+@media only screen and (max-width: 425px) {
+    .container {
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    .main {
+        min-height: 100%;
+        height: auto;
+        width: 100%;
+    }
+
+    .main h1 {
+        font-size: 1.3rem;
+    }
+
+    .donate {
+        height: auto;
+    }
+
+    .donateBox {
+        height: auto;
+        width: 95%;
+        flex-direction: column;
+    }
+
+    .submitRow {
+        height: 60px;
+        width: 95%;
+    }
+
+    .donateBtn {
+        height: 40px;
+        width: 150px;
+    }
+
+    .imageSection, .despSection, .dietSection {
+        height: auto;
+        width: 95%;
+        padding-left: 1rem;
+    }
 }

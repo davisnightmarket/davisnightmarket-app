@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Navbar.module.css'
 import { AiFillHome, AiFillCompass, AiOutlineLogin, AiOutlineLogout } from 'react-icons/ai'
 import { IoDocumentsOutline } from 'react-icons/io5'
+import { GiHamburgerMenu } from 'react-icons/gi'
 import Link from 'next/link';
 
 export default function Navbar(props) {
     const [ btn1, btn2, btn3 ] = props.status;
+    const [ btnClicked, setBtnClicked ] = useState(false)
 
     const homeNavbar = <React.Fragment>
                 <Link href='/main'>
@@ -74,13 +76,23 @@ export default function Navbar(props) {
     </React.Fragment>
 
     return (
-        <div className={ styles.navbar }>
+        <div className={ styles.navbar } >
             <Link href={'/'}>
                 <div className={ styles.logoSection }>
                     <img src='/images/logo.png' />
                     <h4>ALL FOOD DESERVES A SECOND CHANCE</h4> 
                 </div>
             </Link>
+            <div className={ styles.mobileNav }>
+                <img className={ styles.mobileLogo } src='/images/logo.png' />
+                <GiHamburgerMenu className={ styles.burgerBtn } size={ 50 } color={ '#fff' }
+                onClick={ () => setBtnClicked( !btnClicked ) } />
+            </div>
+            <div className={styles.mobileMenu} style={ btnClicked ? { transform: 'translateY(0px)', height: '100%', transition: 'linear 0.3s' } : { transform: 'translateY(-400px)', height: '0%', transition: 'linear 0.3s' } }>
+                { (!props.donor && !props.receiver) ? homeNavbar : null }
+                { props.donor ? donorNavbar : null }
+                { props.receiver ? receiverNavbar : null }
+            </div>
             <div className={styles.menu}>
                 { (!props.donor && !props.receiver) ? homeNavbar : null }
                 { props.donor ? donorNavbar : null }

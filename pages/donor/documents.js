@@ -59,7 +59,7 @@ Sincerely,`, 10, 130)
           <Navbar donor id={props.id} status={[ false, true, false ]} />
           <div className={ styles.main }>
             <h1>Previous Donations</h1>
-            <p>No History of Donations At This Moment!</p>
+            <p className={ styles.noDonation } >No History of Donations At This Moment!</p>
             <h1>Tax Documents</h1>
             <div className={ styles.taxRecords }>
                 {

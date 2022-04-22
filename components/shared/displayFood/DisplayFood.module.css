@@ -162,4 +162,13 @@
         margin-left: 0.5rem;
         font-size: 12px;
     }
+
+    .claimRow {
+        height: 3rem;
+    }
+
+    .claimBtn, .claimBtn:hover {
+        width: 120px;
+        font-size: 13px;
+    }
 }

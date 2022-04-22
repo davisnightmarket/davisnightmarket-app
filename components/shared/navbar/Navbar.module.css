@@ -8,6 +8,10 @@
     background-color: #74B177;
 }
 
+.mobileNav, .mobileMenu {
+    display: none;
+}
+
 .logoSection {
     display: flex;
     flex-direction: column;
@@ -37,7 +41,7 @@
     margin: 2rem 25% 2rem 0;
 }
 
-.menu {
+.menu, .mobileMenu {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -64,12 +68,47 @@
 
 @media only screen and (max-width: 425px) {
     .navbar {
-        height: 400px;
+        height: 100px;
         width: 100%;
     }
 
-    .menu {
+    .menu, .mobileMenu {
         height: 100%;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .mobileMenu {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background-color: #74B177;
+        z-index: 5;
+    }
+
+    .mobileNav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .mobileLogo {
+        height: 60px;
+        width: auto;
+        margin-left: 2rem;
+    }
+
+    .burgerBtn {
+        padding: 10px;
+        border: 2px #fff solid;
+        border-radius: 10px;
+        margin-right: 2rem;
+        z-index: 10;
     }
 
     .logoSection {
@@ -78,5 +117,6 @@
 
     .menuOption {
         height: 50px;
+        z-index: 5;
     }
 }

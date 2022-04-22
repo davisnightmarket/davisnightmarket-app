@@ -206,7 +206,7 @@
     }
 
     .main {
-        min-height: 100%;
+        min-height: 100vh;
         height: auto;
         width: 100%;
     }
@@ -239,5 +239,26 @@
         height: auto;
         width: 95%;
         padding-left: 1rem;
+    }
+
+    .donationRow {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 120px;
+    }
+
+    .donationRow p {
+        font-size: 15px;
+    }
+
+    .donationBtn {
+        margin: 1rem 0 0 2rem;
+        height: 40px;
+        width: 240px;
+    }
+
+    .noDonation {
+        margin-left: 2rem;
     }
 }

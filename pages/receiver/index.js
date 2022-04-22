@@ -71,7 +71,7 @@ export default function Receiver(props) {
                         selectedFood ? 
                         <DisplayFood claim data={selectedFood} addFood={addReceiverRecord} selectFood={setSelectedFood} />
                         :
-                        <p style={{ marginBottom: '2rem' }}>Choose the food you want to claim below!</p>
+                        <p>Choose the food you want to claim below!</p>
                       }
                     </div>
                     <div className={ styles.scrollable }>

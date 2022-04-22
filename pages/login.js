@@ -114,7 +114,7 @@ export default function Explore() {
             <meta name="description" content="Food Redemption: Every Food Needs A Second Chance" />
             <link rel="icon" href="/favicon.ico" />
           </Head>
-          <Navbar status={[ false, false, true ]} />
+          <Navbar status={[ false, false, false, true ]} />
           <div className={ styles.main }>
             { pageState == 0 ? defaultPage : null }
             { pageState == 1 ? donorPage : null }

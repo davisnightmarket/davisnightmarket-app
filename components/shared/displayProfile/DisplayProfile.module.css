@@ -1,0 +1,80 @@
+.profileBar {
+    height: 13rem;
+    width: 90%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.imageSection {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageSection img {
+    height: 10rem;
+    width: 10rem;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 1rem;
+}
+
+.detailSection {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.detailSection h4 {
+    margin: 1rem 0 1rem 1rem;
+    font-size: 2rem;
+}
+
+.detailSection p {
+    margin: 0 0 1rem 1rem;
+    font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 425px) {
+    .profileBar {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .imageSection {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .imageSection img {
+        margin: 20px 20px 10px 20px;
+        height: 150px;
+        width: 150px;
+        border-radius: 0.5rem;
+    }
+
+    .detailSection {
+        width: 100%;
+    }
+
+    .detailSection h4 {
+        margin: 0 0 1rem 1rem;
+        font-size: 23px;
+    }
+
+    .detailSection p {
+        font-size: 15px;
+    }
+}

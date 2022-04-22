@@ -3,10 +3,11 @@ import styles from './Navbar.module.css'
 import { AiFillHome, AiFillCompass, AiOutlineLogin, AiOutlineLogout } from 'react-icons/ai'
 import { IoDocumentsOutline } from 'react-icons/io5'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { BsFillPeopleFill } from 'react-icons/bs'
 import Link from 'next/link';
 
 export default function Navbar(props) {
-    const [ btn1, btn2, btn3 ] = props.status;
+    const [ btn1, btn2, btn3, btn4 ] = props.status;
     const [ btnClicked, setBtnClicked ] = useState(false)
 
     const homeNavbar = <React.Fragment>
@@ -22,11 +23,17 @@ export default function Navbar(props) {
                         <p style={ btn2 ? { color: '#000' } : { color: '#fff' } }>Explore</p>
                     </div>
                 </Link>
+                <Link href='/team'>
+                    <div className={ styles.menuOption } style={ btn3 ? { backgroundColor: '#E7EDE9' } : null }>
+                        <BsFillPeopleFill color={btn3 ? '#000' : '#fff'} size={30} style={{ margin: '0 1.5rem' }} />
+                        <p style={ btn3 ? { color: '#000' } : { color: '#fff' } }>Team</p>
+                    </div>
+                </Link>
                 <div className={ styles.line }></div>
                 <Link href='/login'>
-                    <div className={ styles.menuOption } style={ btn3 ? { backgroundColor: '#E7EDE9' } : null }>
-                        <AiOutlineLogin color={btn3 ? '#000' : '#fff'} size={30} style={{ margin: '0 1.5rem' }} />
-                        <p style={ btn3 ? { color: '#000' } : { color: '#fff' } }>Log In</p>
+                    <div className={ styles.menuOption } style={ btn4 ? { backgroundColor: '#E7EDE9' } : null }>
+                        <AiOutlineLogin color={btn4 ? '#000' : '#fff'} size={30} style={{ margin: '0 1.5rem' }} />
+                        <p style={ btn4 ? { color: '#000' } : { color: '#fff' } }>Log In</p>
                     </div>
                 </Link>
     </React.Fragment>

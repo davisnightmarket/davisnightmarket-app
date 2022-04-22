@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './DisplayFood.module.css'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { IoFastFoodOutline } from 'react-icons/io5'
 import { ImCross } from 'react-icons/im'
-import { useState } from 'react';
 
 export default function DisplayFood(props) {
     const [cancelHover, setCancelHover] = useState(false)

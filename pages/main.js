@@ -1,12 +1,8 @@
 import Head from 'next/head'
 import Navbar from '../components/shared/navbar/navbar';
-import { AddDonorFields, AddFields } from '../firebase_ops/query';
 import styles from '../styles/Main.module.css'
 
 export default function Main() {
-
-// AddFields()
-// AddDonorFields()
   return (
     <div className={styles.container}>
       <Head>
@@ -17,7 +13,7 @@ export default function Main() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet" />
       </Head>
-      <Navbar status={[ true, false, false ]} />
+      <Navbar status={[ true, false, false, false ]} />
       <div className={ styles.scrollable }>
         <div className={ styles.main }>
           <div className={ styles.mapSection }>

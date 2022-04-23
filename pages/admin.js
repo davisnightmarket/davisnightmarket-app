@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import Navbar from "../components/shared/navbar/navbar";
-import styles from '../styles/Login.module.css'
+import styles from '../styles/Admin.module.css'
 import { BiArrowBack } from 'react-icons/bi'
 import { useState, useEffect } from 'react';
 import { GetAllDonorCredentials, GetAllReceiverCredentials } from '../firebase_ops/query';
 import { useRouter } from 'next/router';
 
-export default function Explore() {
+export default function Admin() {
     const [donorData, setDonorData] = useState(null)
     const [donorUserInput, setDonorUserInput] = useState('')
     const [receiverUserInput, setRecieverUserInput] = useState('')
@@ -114,7 +114,7 @@ export default function Explore() {
             <meta name="description" content="Food Redemption: Every Food Needs A Second Chance" />
             <link rel="icon" href="/favicon.ico" />
           </Head>
-          <Navbar status={[ false, false, false, true ]} />
+          {/* <Navbar status={[ false, false, false, true ]} /> */}
           <div className={ styles.main }>
             { pageState == 0 ? defaultPage : null }
             { pageState == 1 ? donorPage : null }

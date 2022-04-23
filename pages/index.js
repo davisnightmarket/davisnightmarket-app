@@ -14,8 +14,6 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet" />
       </Head>
       <div className={ styles.main }>
-        <h1>Food Redemption</h1>
-        <h4>All Food Deserves A Second Chance</h4>
         <img src="/images/logo.png" alt='Main Logo' /> 
         <Link href='/main'>
           <div className={ styles.btn }>

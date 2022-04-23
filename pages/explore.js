@@ -31,7 +31,7 @@ export default function Explore() {
           <meta name="description" content="Food Redemption: All Food Deserves A Second Chance" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Navbar status={[ false, true, false, false ]} />
+        <Navbar status={[ false, true, false, false, false ]} />
         <div className={ styles.main }>
             <h1>Availability for April {(new Date()).getDate()}th, 2022</h1>
             <div className={ styles.scrollable }>

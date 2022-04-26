@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import styles from './Navbar.module.css'
-import { AiFillHome, AiFillCompass, AiOutlineLogin, AiOutlineLogout } from 'react-icons/ai'
+import { AiFillHome, AiFillCompass } from 'react-icons/ai'
 import { IoStatsChart } from 'react-icons/io5'
 import { GiHamburgerMenu, GiStairsGoal } from 'react-icons/gi'
 import { BsFillPeopleFill } from 'react-icons/bs'
+import { MdHandyman } from 'react-icons/md'
 import Link from 'next/link';
 
 export default function Navbar(props) {
-    const [ btn1, btn2, btn3, btn4, btn5 ] = props.status;
+    const [ btn1, btn2, btn3, btn4, btn5, btn6 ] = props.status;
     const [ btnClicked, setBtnClicked ] = useState(false)
 
     const homeNavbar = <React.Fragment>
@@ -35,10 +36,16 @@ export default function Navbar(props) {
                         <p style={ btn4 ? { color: '#000' } : { color: '#fff' } }>Mission</p>
                     </div>
                 </Link>
-                <Link href='/team'>
+                <Link href='/diy'>
                     <div className={ styles.menuOption } style={ btn5 ? { backgroundColor: '#E7EDE9' } : null }>
-                        <BsFillPeopleFill color={btn5 ? '#000' : '#fff'} size={30} style={{ margin: '0 1.5rem' }} />
-                        <p style={ btn5 ? { color: '#000' } : { color: '#fff' } }>Team</p>
+                        <MdHandyman color={btn5 ? '#000' : '#fff'} size={30} style={{ margin: '0 1.5rem' }} />
+                        <p style={ btn5 ? { color: '#000' } : { color: '#fff' } }>DIY</p>
+                    </div>
+                </Link>
+                <Link href='/team'>
+                    <div className={ styles.menuOption } style={ btn6 ? { backgroundColor: '#E7EDE9' } : null }>
+                        <BsFillPeopleFill color={btn6 ? '#000' : '#fff'} size={30} style={{ margin: '0 1.5rem' }} />
+                        <p style={ btn6 ? { color: '#000' } : { color: '#fff' } }>Team</p>
                     </div>
                 </Link>
     </React.Fragment>

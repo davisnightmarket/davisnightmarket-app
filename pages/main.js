@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import Navbar from '../components/shared/navbar/navbar';
 import styles from '../styles/Main.module.css'
+import { ImFacebook2 } from 'react-icons/im'
+import { GrInstagram, GrTwitter } from 'react-icons/gr'
+import { FiMail } from 'react-icons/fi'
 
 export default function Main() {
   return (
@@ -21,6 +24,21 @@ export default function Main() {
             <p>4th St & C St, Davis, CA 95616</p>
             <div className={ styles.mapFrame }>
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3120.500766408288!2d-121.74668118465996!3d38.54527477962652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085290afd5583df%3A0x309bf3bbfa6b7ba2!2sCentral%20Park!5e0!3m2!1sen!2sus!4v1650669958333!5m2!1sen!2sus" width="90%" height="90%" style={{ border: 0, borderRadius: '1rem' }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <h1>Find Us On Social Media!</h1>
+            <div className={ styles.socialLogoPanel }>
+              <a href='mailto:nightmarket@freedge.org' target={'_blank'}>
+                <FiMail size={30} className={ styles.socialLogo } />
+              </a>
+              <a href='https://www.instagram.com/davisnightmarket/' target={'_blank'}>
+                <GrInstagram size={30} className={ styles.socialLogo } />
+              </a>
+              <a href='https://twitter.com/DavisNightMrkt' target={'_blank'}>
+                <GrTwitter size={30} className={ styles.socialLogo } />
+              </a>
+              <a href='https://www.facebook.com/davisnightmarket' target={'_blank'}>
+                <ImFacebook2 size={30} className={ styles.socialLogo } />
+              </a>
             </div>
           </div>
           <div className={ styles.donorPanel }>

@@ -1,124 +1,113 @@
 import Head from 'next/head'
-import Navbar from "../components/shared/navbar/navbar";
+import { useState } from 'react';
+import DisplayFood from '../components/shared/displayFood/displayFood';
+import { AddField, GetAllFood } from '../firebase_ops/query';
 import styles from '../styles/Admin.module.css'
-import { BiArrowBack } from 'react-icons/bi'
-import { useState, useEffect } from 'react';
-import { GetAllDonorCredentials, GetAllReceiverCredentials } from '../firebase_ops/query';
+import { v4 as uuidv4 } from 'uuid'
 import { useRouter } from 'next/router';
 
-export default function Admin() {
-    const [donorData, setDonorData] = useState(null)
-    const [donorUserInput, setDonorUserInput] = useState('')
-    const [receiverUserInput, setRecieverUserInput] = useState('')
-    const [pageState, setPageState] = useState(0)
-    const [receiverData, setReceiverData] = useState(null)
-    const [errorMsg, setErrorMsg] = useState(false)
-    
+export async function getServerSideProps(context) {
+    const foodData = await GetAllFood();
+    const allFoods = []
+    foodData.forEach(x => {
+        const extracted = x.data()
+        extracted.id = x.id
+        allFoods.push(extracted)
+    })
+
+    return { props: { allFoods } };
+}
+
+export default function Admin(props) {
+    const [foodName, setFoodName] = useState('')
+    const [restaurantName, setRestaurantName] = useState('')
+    const [foodQuantity, setFoodQuantity] = useState('')
+
     const router = useRouter();
 
-    const checkDonorCredential = () => {
-      const res = donorData.filter(x => x.access_code == donorUserInput)
-      if (res.length == 1) {
-        router.replace(`/donor?id=${res[0].id}`)
-      } else {
-        setErrorMsg(true);
-      }
+    const returnDay = (offset) => {
+      const date = new Date(new Date().setDate(new Date().getDate()-offset));
+      return `${date.getMonth() + 1 < 10 ? '0' : ''}${date.getMonth() + 1}/${date.getDate() < 10 ? '0' : ''}${date.getDate()}/${date.getFullYear()}`
     }
 
-    const checkReceiverCredential = () => {
-      const res = receiverData.filter(x => x.access_code == receiverUserInput)
-      if (res.length == 1){
-        router.replace(`/receiver?id=${res[0].id}`)
-      } else {
-        setErrorMsg(true);
-      }
+    const addNewDonation = async () => {
+        const data = {
+            date_added: returnDay(0),
+            name: foodName,
+            owner: restaurantName,
+            quantity_available: foodQuantity,
+        }
+        await AddField(data);
+        router.reload()
     }
-
-    const defaultPage = <div className={ styles.optionRow }>
-          <div className={ styles.donorOption } onClick={() => setPageState(1)}>
-              <img src='/images/donor.png' />
-              <p>I&apos;m a Donor</p>
-          </div>
-          <div className={ styles.receiveOption } onClick={() => setPageState(2)}>
-              <img src='./images/receiver.png' />
-              <p>I&apos;m a Receiver</p>
-          </div>
-      </div>
-
-    const donorPage = <div className={ styles.loginBox }>
-        <div className={ styles.goBackBox } onClick={() => {
-          setPageState(0);
-          setErrorMsg(false);
-          }}>
-          <BiArrowBack size={20} style={{ marginRight: '1rem' }} />
-          <p>Back to selection</p>
-        </div>
-        <div className={ styles.credentialBox }>
-          <p>Please enter your access code: </p>
-          <input onChange={ x => setDonorUserInput(x.target.value) } />
-          { errorMsg ? <p className={ styles.error }>Incorrect Access Code!</p> : null }
-        </div>
-        <div className={ styles.clickToLogin } onClick={() => checkDonorCredential()}>
-          <p>Login!</p>
-        </div>
-      </div>
-
-    const receiverPage = <div className={ styles.loginBox }>
-        <div className={ styles.goBackBox } onClick={() => {
-          setPageState(0);
-          setErrorMsg(false);
-        }}>
-          <BiArrowBack size={20} style={{ marginRight: '1rem' }} />
-          <p>Back to selection</p>
-        </div>
-        <div className={ styles.credentialBox }>
-          <p>Please enter your access code: </p>
-          <input onChange={ x => setRecieverUserInput(x.target.value) } />
-        </div>
-        <div className={ styles.clickToLogin } onClick={() => checkReceiverCredential()}>
-          <p>Login!</p>
-        </div>
-      </div>
-
-    const getDonorCredential = async () => {
-      const data = await GetAllDonorCredentials();
-      const initialData = []
-      data.forEach(x => {
-        const extracted = x.data()
-        extracted.id = x.id
-        initialData.push(extracted)
-      })
-      setDonorData(initialData);
-    }
-    
-    const getReceiverCredential = async () => {
-      const data = await GetAllReceiverCredentials();
-      const initialData = []
-      data.forEach(x => {
-        const extracted = x.data()
-        extracted.id = x.id
-        initialData.push(extracted)
-      })
-      setReceiverData(initialData);
-    }
-
-    useEffect(() => {
-      getDonorCredential();
-      getReceiverCredential();
-    }, [])
 
     return (
-        <div className={styles.container}>
+        <div className={ styles.container }>
           <Head>
             <title>Food Redemption - Explore</title>
             <meta name="description" content="Food Redemption: Every Food Needs A Second Chance" />
             <link rel="icon" href="/favicon.ico" />
           </Head>
-          {/* <Navbar status={[ false, false, false, true ]} /> */}
           <div className={ styles.main }>
-            { pageState == 0 ? defaultPage : null }
-            { pageState == 1 ? donorPage : null }
-            { pageState == 2 ? receiverPage : null }
+            <h1>Hello, The Davis Night Market Volunteers!</h1>
+            <h4>Thank you for contributing to this amazing cause!</h4>
+            <p className={ styles.titleCaption } >What are we donating today? Check out uploaded results in real-time 
+            <a className={ styles.redirectBtn } href='/explore' target={'_blank'}> here</a>!</p>
+            <div className={ styles.donate }>
+                <div className={ styles.donateBox }>
+                    <div className={ styles.despSection }>
+                        <h4>Food Descriptions</h4>
+                        <div className={ styles.rowCenter } style={{ marginBottom: '1rem' }}>
+                            <p>Food name:</p>
+                            <input className={ styles.textInput } list='foodList' onChange={x => setFoodName(x.target.value)} />
+                            <datalist id='foodList'>
+                              <option value={'Bread'} />
+                            </datalist>
+                        </div>
+                        <div className={ styles.rowCenter } style={{ marginBottom: '1rem' }}>
+                            <p>Restaurant name:</p>
+                            <input className={ styles.textInput } list='restaurantList' onChange={x => setRestaurantName(x.target.value)} />
+                            <datalist id='restaurantList'>
+                              {['Village Bakery', "Sophia's Thai Kitchen"].map(x => <option value={x} />)}
+                            </datalist>
+                        </div>
+                        <div className={ styles.rowCenter }>
+                            <p>Quantity: </p>
+                            <input className={ styles.textInput } type={'number'} onChange={x => setFoodQuantity(x.target.value)} />
+                        </div>
+                    </div>
+                    <div className={ styles.dietSection }>
+                        <h4>Quantity Type: </h4>
+                        <select>
+                          <option value=''>Item (s)</option>
+                          <option value=''>Lb (s)</option>
+                          <option value=''>Kg (s)</option>
+                        </select>
+                    </div>
+                </div>
+                <div className={ styles.submitRow }>
+                    <div className={ styles.donateBtn } onClick={() => addNewDonation()}>
+                        <p>Donate!</p>
+                    </div>
+                </div>
+            </div>
+            <div className={ styles.donate }>
+                <div className={ styles.attendanceBox }>
+                    <div className={ styles.despSection }>
+                        <div className={ styles.rowCenter }>
+                            <p>How many people came today? </p>
+                            <input className={ styles.textInput } type={'number'} onChange={x => setFoodQuantity(x.target.value)} />
+                        </div>
+                    </div>
+                    <div className={ styles.donateBtn } onClick={() => addNewDonation()}>
+                        <p>Submit!</p>
+                    </div>
+                </div>
+            </div>
+            <h1 className={ styles.donateHeader } >Donation(s) Today</h1>
+            <div className={ styles.donatedFood }>
+                { props.allFoods.filter(x => Math.floor(Math.abs(new Date(x.date_added) - new Date()) / (1000 * 60 * 60 * 24)) == 0).map(x => <DisplayFood data={x} key={x.id} />) }
+            </div>
           </div>
         </div>
       )

@@ -8,97 +8,39 @@
 }
 
 .main {
-    height: 100%;
+    min-height: 100%;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     background-color: rgba(116, 177, 119, 0.2);
 }
 
-.optionRow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 45%;
-    width: 70%;
-}
-
-.donorOption, .receiveOption {
-    height: 98%;
-    width: 48%;
-    border-radius: 2rem;
-    background-color: rgba(256, 256, 256, 0.58);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transition: linear 0.2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.donorOption:hover, .receiveOption:hover {
-    height: 100%;
-    width: 50%;
-}
-
-.donorOption p, .receiveOption p {
-    font-size: 2rem;
-    transition: 0.2s linear;
-}
-
-.donorOption:hover p, .receiveOption:hover p {
-    font-size: 2.2rem;
-}
-
-.donorOption img, .receiveOption img {
-    height: 120px;
-    width: auto;
-    transition: 0.2s linear;
-}
-
-.donorOption:hover img, .receiveOption:hover img {
-    height: 140px;
-    width: auto;
-}
-
-.loginBox {
-    height: 40%;
-    width: 40%;
-    background-color: #fff;
-    border-radius: 1rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.loginBox input {
-    height: 15%;
-    width: 50%;
-    border: 1px #c4c4c4 solid;
-    border-radius: 10px;
-    padding-left: 1rem;
-}
-
-.goBackBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10%;
-    width: 40%;
-    background-color: #fff;
-    border: 2px #000 solid;
-    margin: 1rem;
-    border-radius: 1rem;
-    cursor: pointer;
-}
-
-.goBackBox p {
+.main h4, .main h1, .titleCaption {
     margin: 0;
 }
 
-.credentialBox {
-    height: 55%;
+.main h1 {
+    margin: 2rem 0 1rem 2rem;
+}
+
+.main h4 {
+    margin: 0 0 1rem 2rem;
+}
+
+.titleCaption {
+    margin: 0 0 2rem 2rem;
+}
+
+.redirectBtn {
+    font-weight: bold;
+    color: rgb(96, 0, 96);
+}
+
+.donate {
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -106,74 +48,195 @@
     align-items: center;
 }
 
-.clickToLogin {
+.donateBox, .attendanceBox {
+    height: 13rem;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 1rem 1rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.attendanceBox {
+    margin-top: 1rem;
+    height: 4rem;
+    border-radius: 1rem;
+}
+
+.despSection, .dietSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 80%;
+    margin-top: 2rem;
+}
+
+.despSection h4, .dietSection h4 {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.despSection {
+    width: 60%;
+    padding-left: 2rem;
+}
+
+.dietSection {
+    align-items: flex-start;
+    width: 40%;
+}
+
+.dietSection select {
+   padding: 0.3rem 1rem;
+   border-radius: 0.5rem;
+   border: 1px solid #C4C4C4; 
+}
+
+.textInput {
+    height: 1.5rem;
+    width: 90%;
+    border: 1px #C4C4C4 solid;
+    border-radius: 0.5rem;
+}
+
+.rowCenter, .checkBox {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10%;
-    width: 40%;
-    background-color: rgba(116, 177, 119, 0.8);
-    margin: 1rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    color: #fff;
 }
 
-.clickToLogin p {
+.rowCenter {
+    width: 90%;
+}
+
+.rowCenter p {
+    width: 40%;
+}
+
+.rowCenter p, .checkBox p {
+    margin: 0;
+    margin-right: 1rem;
+}
+
+.rowCenter input {
+    padding: 0 0.5rem;
+}
+
+.checkBox {
+    margin-bottom: 0.5rem;
+}
+
+.submitRow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 3rem;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.donateBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 15%;
+    background-color: rgba(116, 177, 119, 0.9);
+    border-radius: 2rem;
+    color: #fff;
+    margin-right: 2rem;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.donateBtn:hover {
+    height: 71%;
+    width: 16%;
+}
+
+.donateBtn p {
     margin: 0;
 }
 
-.clickToLogin:hover {
-    height: 11%;
-    width: 41%;
-    transition: linear 0.2s;
+.donateHeader {
+    font-size: 1.4rem;
 }
 
-.error {
-    color: red;
+.donatedFood {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 @media only screen and (max-width: 425px) {
     .container {
+        height: auto;
+        min-height: 100vh;
         flex-direction: column;
     }
 
     .main {
+        min-height: 100vh;
+        height: auto;
         width: 100%;
     }
 
-    .optionRow {
+    .main h1 {
+        font-size: 1.3rem;
+    }
+
+    .donate {
+        height: auto;
+    }
+
+    .donateBox {
+        height: auto;
+        width: 95%;
         flex-direction: column;
-        justify-content: flex-start;
-        height: 95%;
+    }
+
+    .submitRow {
+        height: 60px;
         width: 95%;
     }
 
-    .donorOption, .receiveOption, .donorOption:hover, .receiveOption:hover {
-        height: 260px;
-        width: 260px;
-        margin-top: 30px;
+    .donateBtn {
+        height: 40px;
+        width: 150px;
     }
 
-    .donorOption img, .receiveOption img {
-        height: 100px;
-    }
-
-    .donorOption p, .receiveOption p {
-        font-size: 30px;
-    }
-
-    .loginBox {
-        height: 300px;
+    .despSection, .dietSection {
+        height: auto;
         width: 95%;
+        padding-left: 1rem;
     }
 
-    .goBackBox p {
-        font-size: 12px;
+    .donationRow {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 120px;
     }
 
-    .goBackBox, .clickToLogin, .clickToLogin:hover {
-        height: 35px;
-        width: 170px;
+    .donationRow p {
+        font-size: 15px;
+    }
+
+    .donationBtn {
+        margin: 1rem 0 0 2rem;
+        height: 40px;
+        width: 240px;
+    }
+
+    .noDonation {
+        margin-left: 2rem;
     }
 }

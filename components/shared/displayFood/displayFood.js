@@ -42,7 +42,7 @@ export default function DisplayFood(props) {
                             </div>
                             :
                             <div className={ styles.availability }>
-                                <p>{props.data.quantity_available - props.data.quantity_claimed} Available!</p>
+                                <p>{props.data.quantity_available} Available!</p>
                             </div>
                         )
                     )

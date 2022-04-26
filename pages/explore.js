@@ -23,7 +23,6 @@ export default function Explore() {
     getFoodData()
   }, [])
 
-
   return (
       <div className={styles.container}>
         <Head>
@@ -37,7 +36,7 @@ export default function Explore() {
             <div className={ styles.scrollable }>
               <div className={ styles.mainContainer }>
                 {
-                  foodData ? foodData.map(x => <DisplayFood data={x} key={x.id} />) : null
+                  foodData ? foodData.filter(x => Math.floor(Math.abs(new Date(x.date_added) - new Date()) / (1000 * 60 * 60 * 24)) == 0).map(x => <DisplayFood data={x} key={x.id} />) : null
                 }
               </div>
             </div>

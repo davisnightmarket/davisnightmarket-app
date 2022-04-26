@@ -11,7 +11,7 @@ export default function DisplayFood(props) {
         <div className={ styles.mainCover } style={ props.claimable ? null : { height: '8rem' } }>
             <div className={ styles.foodContainer }>
                 <div className={ styles.imgSection }>
-                { props.data.img_url == "" ? <IoFastFoodOutline size={40} /> : <img src={ props.data.img_url } alt='food image' /> }
+                    <IoFastFoodOutline size={40} />
                 </div>
                 <div className={ styles.foodDesp }>
                     <h4>{ props.data.name }</h4>

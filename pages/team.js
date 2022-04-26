@@ -15,7 +15,7 @@ export default function Team() {
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
             <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet" />
             </Head>
-            <Navbar status={[ false, false, false, false, true ]} />
+            <Navbar status={[ false, false, false, false, false ,true ]} />
             <div className={ styles.scrollable }>
                 <div className={ styles.main }>
                     <h1>Meet Our Team!</h1>
